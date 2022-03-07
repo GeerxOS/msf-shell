@@ -200,7 +200,7 @@ def main():
     if opcion =="use auxiliary/gather/searchengine_subdomains_collector":
         search_sdomains()
     
-    if opcion=="use exploit/windows/fileformat/adobe_pdf_embedded_exe":
+    if opcion=="use exploit/windows/fileformat/adobe_pdf_embedded_exe_nojs":
         adobe_exe()
 
 def android_tcp():
