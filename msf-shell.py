@@ -34,6 +34,7 @@ help="""
 | show credits     | Show the credits.          |
 | banner           | Show the banner.           |
 | show payloads    | Show Payloads.             |
+| show beta        | Show beta options.         |
 | show auxiliarys  | Show Auxiliarys.           |
 | show exploits    | Show Exploits.             |
 +-----------------------------------------------+
@@ -57,6 +58,26 @@ creditos="""
 
 """
 
+payloadsbeta="""
+
++----------------------------------+  +------------------------------------+  +---------------------------------------+
+|       Android Payloads           |  |          Windows Payloads          |  |        Linux Payloads                 |
+|                                  |  | windows/meterpreter/reverse_tcp    |  | linux/x86/meterpreter/reverse_tcp     |
+| android/meterpreter/reverse_tcp  |  |                                    |  |                                       |
+|                                  |  | windows/meterpreter/reverse_http   |  | linux/x86/meterpreter_reverse_http    |
+| android/meterpreter/reverse_http |  |                                    |  |                                       |
+|==================================|  |  python/meterpreter/reverse_tcp    |  | linux/x64/meterpreter/reverse_tcp     |
+|           Netcat                 |  |====================================|  |                                       |
+|   android/shell/reverse_tcp      |  |            Netcat                  |  | linux/x64/meterpreter_reverse_http    |
+|                                  |  |    windows/shell/reverse_tcp       |  |                                       |
+|   android/shell/reverse_http     |  |                                    |  |  python/meterpreter/reverse_tcp       |
++----------------------------------+  |    windows/shell/reverse_udp       |  |=======================================|
+                                      |                                    |  |              Netcat                   |
+                                      |    python/shell_reverse_tcp        |  |      python/shell_reverse_tcp         |
+                                      +------------------------------------+  +---------------------------------------+
+
+"""
+
 payloads="""
 
 +----------------------------------+ 
@@ -73,7 +94,7 @@ payloads="""
 |==================================|
 |      Linux Payloads              |
 | linux/x86/meterpreter/reverse_tcp|
-+==================================+
++----------------------------------+
 
 """
 auxiliarys="""
@@ -97,18 +118,18 @@ exploits="""
 |                                                       |
 +=======================================================+
 """
-# se inicia la db de metasploit para mas rapidez :)
-
-os.system("service postgresql start")
-time.sleep(2)
+# pide el user para editar la terminal
 
 user = input("Give me your username:")
 print("Ok")
+print("PLEASE USE THE TOOL IN FULL SCREEN FOR BETTER EXPERIENCE")
+time.sleep(5)
 
 os.system("clear")
 green()
 print(banner)
 
+# script principal
 def main():
     green()
     print("Use the help command to see the options!")
@@ -136,6 +157,23 @@ def main():
         print(payloads)
         main()
 
+    if opcion =="show beta":
+        os.system("clear")
+        red()
+        print(banner)
+        time.sleep(0.4)
+        print("These options are in beta, then they will be added to the tool!")
+        time.sleep(0.4)
+        print("These options are in beta, then they will be added to the tool!")
+        time.sleep(0.4)
+        print(payloadsbeta)
+        print("These options are in beta, then they will be added to the tool!")
+        time.sleep(0.4)
+        print("These options are in beta, then they will be added to the tool!")
+        time.sleep(0.4)
+        main()
+        
+
     if opcion=="show exploits":
         os.system("clear")
         blue()
@@ -157,7 +195,7 @@ def main():
         main()
 
     if opcion =="exit":
-        os.system("rm android_tcp.rb android_http.rb windows_tcp.rb windows_http.rb linux_tcp.rb gmails.rb sdomains.rb adobejs_listener.rb adobe_pdfjs.rb")
+        os.system("rm -rf __pycache__")
         print("Good Bye!")
         exit()
 
