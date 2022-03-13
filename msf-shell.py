@@ -1,11 +1,12 @@
 import os
 import time
-from sys import stdout
+from sys import *
 
 # tool en ingles pa los gringos xd
 #colores
 from colors import red, green, blue, yellow, purple, white
 
+from anim import anim
 
 # si solo copias y pegas dame creditos XDD
 
@@ -120,7 +121,7 @@ exploits="""
 """
 # pide el user para editar la terminal
 
-user = input("Give me your username:")
+user = input("Give me your username: ")
 print("Ok")
 print("PLEASE USE THE TOOL IN FULL SCREEN FOR BETTER EXPERIENCE")
 time.sleep(5)
@@ -128,7 +129,7 @@ time.sleep(5)
 os.system("clear")
 green()
 print(banner)
-
+anim()
 # script principal
 def main():
     green()
