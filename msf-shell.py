@@ -2,8 +2,9 @@ import os
 import time
 from sys import *
 
-# tool en ingles pa los gringos xd
+
 #colores
+
 from colors import red, green, blue, yellow, purple, white
 
 from anim import anim
@@ -26,19 +27,21 @@ banner="""
 
 """
 help="""
-+-----------------------------------------------+
-|      Commands                                 |
-| Command          | Description                |  
-| use              | Use a payload or auxiliary.|
-| help             | Show available commands.   |
-| exit             | Finish the script.         |
-| show credits     | Show the credits.          |
-| banner           | Show the banner.           |
-| show payloads    | Show Payloads.             |
-| show beta        | Show beta options.         |
-| show auxiliarys  | Show Auxiliarys.           |
-| show exploits    | Show Exploits.             |
-+-----------------------------------------------+
++------------------------------------------------+
+|      Commands                                  |
+| Command          | Description                 |  
+| use              | Use a payload or auxiliary. |
+| help             | Show available commands.    |
+| exit             | Finish the script.          |
+| update           | Update the script           |
+| show credits     | Show the credits.           |
+| banner           | Show the banner.            |
+| show payloads    | Show Payloads.              |
+| show beta        | Show beta options.          |
+| show auxiliarys  | Show Auxiliarys.            |
+| show exploits    | Show Exploits.              |
+| add              | Add the tool to the terminal|
++------------------------------------------------+
 
 """
 creditos="""
@@ -120,16 +123,30 @@ exploits="""
 +=======================================================+
 """
 
+# Paths
+
+exploits = "exploits/"
+apks = "apks/"
+elfs = "elfs/"
+exes = "exes/"
+auxiliarys = "auxiliarys/"
+
+# Animacion
+
 time.sleep(2)
 green()
 anim()
 anim()
 
+# Chequea el usuario
+
 user = os.getlogin()
 os.system("clear")
 green()
 print(banner)
-# script principal
+
+# Script principal
+
 def main():
     green()
     print("Use the help command to see the options!")
@@ -187,6 +204,17 @@ def main():
         print(banner)
         main()
 
+    if opcion == "update":
+        print("Updating...")
+        os.system("git pull")
+        print("All updated!")
+        os.system("rm -rf __pycache__")
+        exit()
+
+    if opcion == "add":
+        print("Adding tool!")
+        os.system("bash add.sh")
+        exit()
     if opcion =="show credits":
         os.system("clear")
         blue()
@@ -245,6 +273,7 @@ def main():
         adobe_exe()
 
 def android_tcp():
+    os.chdir( apks )
     os.system("clear")
     print(banner)
     red()
@@ -282,6 +311,7 @@ def android_tcp():
     main()
 
 def android_http():
+    os.chdir( apks )
     os.system("clear")
     print(banner)
     red()
@@ -315,6 +345,7 @@ def android_http():
     main()
 
 def windows_tcp():
+    os.chdir( exes )
     os.system("clear")
     print(banner)
     red()
@@ -349,6 +380,7 @@ def windows_tcp():
 
 
 def windows_http():
+    os.chdir( exes )
     os.system("clear")
     print(banner)
     red()
@@ -382,6 +414,7 @@ def windows_http():
     main()
 
 def linux_tcp():
+    os.chdir( elfs )
     os.system("clear")
     print(banner)
     red()
@@ -415,6 +448,7 @@ def linux_tcp():
     main()
 
 def search_email():
+    os.chdir( auxiliarys)
     os.system("clear")
     print(banner)
     red()
@@ -441,6 +475,7 @@ def search_email():
     main()
 
 def search_sdomains():
+    os.chdir( auxiliarys )
     os.system("clear")
     print(banner)
     red()
@@ -464,6 +499,7 @@ def search_sdomains():
     main()
 
 def adobe_exe():
+    os.chdir( exploits )
     os.system("clear")
     print(banner)
     red()
@@ -504,6 +540,17 @@ def adobe_exe():
     main()
 
 
-main()
+if __name__ == '__main__':
+    try:
+        os.system("clear")
+        green()
+        print(banner)
+        main()
+
+    except(KeyboardInterrupt):
+        print("\nCTRL+C Detected!, force program to stop\n")
+        print("Good bye")
+        os.system("rm -rf __pycache__")
+        exit()
 
 # si copias y pegas tan siquiera da creditos pls me costo hacer esto
