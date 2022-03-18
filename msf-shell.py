@@ -119,17 +119,16 @@ exploits="""
 |                                                       |
 +=======================================================+
 """
-# pide el user para editar la terminal
 
-user = input("Give me your username: ")
-print("Ok")
-print("PLEASE USE THE TOOL IN FULL SCREEN FOR BETTER EXPERIENCE")
-time.sleep(5)
+time.sleep(2)
+green()
+anim()
+anim()
 
+user = os.getlogin()
 os.system("clear")
 green()
 print(banner)
-anim()
 # script principal
 def main():
     green()
