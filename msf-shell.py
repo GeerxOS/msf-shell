@@ -125,11 +125,11 @@ exploits="""
 
 # Paths
 
-exploits = "exploits/"
+exploit = "exploits/"
 apks = "apks/"
 elfs = "elfs/"
 exes = "exes/"
-auxiliarys = "auxiliarys/"
+auxiliary = "auxiliarys/"
 
 # Animacion
 
@@ -213,7 +213,7 @@ def main():
 
     if opcion == "add":
         print("Adding tool!")
-        os.system("bash add.sh")
+        os.system("sudo bash add.sh")
         exit()
     if opcion =="show credits":
         os.system("clear")
@@ -448,7 +448,7 @@ def linux_tcp():
     main()
 
 def search_email():
-    os.chdir( auxiliarys)
+    os.chdir( auxiliary )
     os.system("clear")
     print(banner)
     red()
@@ -475,7 +475,7 @@ def search_email():
     main()
 
 def search_sdomains():
-    os.chdir( auxiliarys )
+    os.chdir( auxiliary )
     os.system("clear")
     print(banner)
     red()
@@ -499,7 +499,7 @@ def search_sdomains():
     main()
 
 def adobe_exe():
-    os.chdir( exploits )
+    os.chdir( exploit )
     os.system("clear")
     print(banner)
     red()
