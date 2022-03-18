@@ -125,11 +125,11 @@ exploits="""
 
 # Paths
 
-exploit = "exploits/"
-apks = "apks/"
-elfs = "elfs/"
-exes = "exes/"
-auxiliary = "auxiliarys/"
+exploit = "exploits"
+apks = "apks"
+elfs = "elfs"
+exes = "exes"
+auxiliary = "auxiliarys"
 
 # Animacion
 
