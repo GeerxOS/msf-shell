@@ -50,6 +50,17 @@ banner="""
 Exploit! Exploit! Payload! Payload! Looks vulnerable! ("hack!")   
 
 """
+
+banner2="""
+
+███╗   ███╗███████╗███████╗    ███████╗██╗  ██╗███████╗██╗     ██╗     
+████╗ ████║██╔════╝██╔════╝    ██╔════╝██║  ██║██╔════╝██║     ██║     
+██╔████╔██║███████╗█████╗█████╗███████╗███████║█████╗  ██║     ██║     
+██║╚██╔╝██║╚════██║██╔══╝╚════╝╚════██║██╔══██║██╔══╝  ██║     ██║     
+██║ ╚═╝ ██║███████║██║         ███████║██║  ██║███████╗███████╗███████╗
+╚═╝     ╚═╝╚══════╝╚═╝         ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
+
+"""
 help="""
 +------------------------------------------------+
 |      Commands                                  |
@@ -181,28 +192,28 @@ def main():
     if opcion =="help":
         os.system("clear")
         blue()
-        print(banner)
+        print(banner2)
         print(help)
         main()
 
     if opcion =="show auxiliarys":
         os.system("clear")
         blue()
-        print(banner)
+        print(banner2)
         print(auxiliarys)
         main()
 
     if opcion =="show payloads":
         os.system("clear")
         blue()
-        print(banner)
+        print(banner2)
         print(payloads)
         main()
 
     if opcion =="show beta":
         os.system("clear")
         red()
-        print(banner)
+        print(banner2)
         time.sleep(0.4)
         print("These options are in beta, then they will be added to the tool!")
         time.sleep(0.4)
@@ -219,14 +230,14 @@ def main():
     if opcion=="show exploits":
         os.system("clear")
         blue()
-        print(banner)
+        print(banner2)
         print(exploits)
         main()
 
     if opcion =="banner":
         os.system("clear")
         blue()
-        print(banner)
+        print(banner2)
         main()
 
     if opcion == "update":
@@ -243,7 +254,7 @@ def main():
     if opcion =="show credits":
         os.system("clear")
         blue()
-        print(banner)
+        print(banner2)
         print(creditos)
         main()
 
@@ -255,7 +266,7 @@ def main():
     if opcion =="use":
         os.system("clear")
         blue()
-        print(banner)
+        print(banner2)
         red()
         print("")
         print("[X] Error. Please use auxiliary or payload! :)")
@@ -267,7 +278,7 @@ def main():
     if opcion =="show":
         os.system("clear")
         red()
-        print(banner)
+        print(banner2)
         print("")
         print("[X] Error. Please use show payloads/auxiliarys/credits/exploits! :)")
         print("")
@@ -300,7 +311,7 @@ def main():
 def android_tcp():
     os.chdir( apks )
     os.system("clear")
-    print(banner)
+    print(banner2)
     red()
     print("Using: android/meterpreter/reverse_tcp")
     print("")
@@ -333,13 +344,13 @@ def android_tcp():
     input("Enter to return to the menu! ")
     os.chdir( normal )
     os.system("clear")
-    print(banner)
+    print(banner2)
     main()
 
 def android_http():
     os.chdir( apks )
     os.system("clear")
-    print(banner)
+    print(banner2)
     red()
     print("Using: android/meterpreter/reverse_http")
     ip = input("Attacker IP: ")
@@ -368,13 +379,13 @@ def android_http():
     input("Enter to return to the menu! ")
     os.chdir( normal )
     os.system("clear")
-    print(banner)
+    print(banner2)
     main()
 
 def windows_tcp():
     os.chdir( exes )
     os.system("clear")
-    print(banner)
+    print(banner2)
     red()
     print("Using: windows/meterpreter/reverse_tcp")
     ip = input("Attacker IP: ")
@@ -403,7 +414,7 @@ def windows_tcp():
     input("Enter to return to the menu! ")
     os.chdir( normal )
     os.system("clear")
-    print(banner)
+    print(banner2)
     main()
 
 
@@ -439,7 +450,7 @@ def windows_http():
     input("Enter to return to the menu! ")
     os.chdir( normal )
     os.system("clear")
-    print(banner)
+    print(banner2)
     main()
 
 def linux_tcp():
@@ -474,7 +485,7 @@ def linux_tcp():
     input("Enter to return to the menu! ")
     os.chdir( normal )
     os.system("clear")
-    print(banner)
+    print(banner2)
     main()
 
 def search_email():
@@ -502,7 +513,7 @@ def search_email():
     input("Enter to return to the menu! ")
     os.chdir( normal )
     os.system("clear")
-    print(banner)
+    print(banner2)
     main()
 
 def search_sdomains():
@@ -527,7 +538,7 @@ def search_sdomains():
     input("Enter to return to the menu! ")
     os.chdir( normal )
     os.system("clear")
-    print(banner)
+    print(banner2)
     main()
 
 def adobe_exe():
@@ -569,7 +580,7 @@ def adobe_exe():
     input("Enter to return to the menu! ")
     os.chdir( normal )
     os.system("clear")
-    print(banner)
+    print(banner2)
     main()
 
 
