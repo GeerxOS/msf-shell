@@ -3,27 +3,51 @@ import time
 from sys import *
 
 
-#colores
+# Importa las scripts
 
-from colors import red, green, blue, yellow, purple, white
+from scripts.colors import red, green, blue, yellow, purple, white
 
-from anim import anim
+from scripts.anim import anim
 
-# si solo copias y pegas dame creditos XDD
+# DISCARDED. from scripts.banners import baners
+
+# Si solo copias y pegas dame creditos XDD
 
 banner="""
 
-+-----------------------|-----------------------|-----------------------+
-|                                                                       |
-|  #     #                      #####                                   |
-|  ##   ##  ####  ######       #     # #    # ###### #      #           |
-|  # # # # #      #            #       #    # #      #      #           |
-|  #  #  #  ####  #####  #####  #####  ###### #####  #      #           |
-|  #     #      # #                  # #    # #      #      #           |
-|  #     # #    # #            #     # #    # #      #      #           |
-|  #     #  ####  #             #####  #    # ###### ###### ######      |
-|                                                                       |
-+-----------------------|-----------------------|-----------------------+
+
+ /'\_/`\          /'___\ 
+/\      \    ____/\ \__/ 
+\ \ \__\ \  /',__\ \ ,__|
+ \ \ \_/\ \/\__, `\ \ \_/                 
+  \ \_\\ \_\/\____/\ \_\ 
+   \/_/ \/_/\/___/  \/_/ 
+                         
+                                            +------------------------------------------------+
+                                            |      Commands                                  |
+                                            | Command          | Description                 |  
+                                            | use              | Use a payload or auxiliary. |
+                                            | help             | Show available commands.    |
+                                            | exit             | Finish the script.          |
+                                            | update           | Update the script           |
+                                            | show credits     | Show the credits.           |
+                                            | banner           | Show the banner.            |
+                                            | show payloads    | Show Payloads.              |
+                                            | show beta        | Show beta options.          |
+                                            | show auxiliarys  | Show Auxiliarys.            |
+                                            | show exploits    | Show Exploits.              |
+                                            | add              | Add the tool to the terminal|
+                                            +------------------------------------------------+
+
+ ____    __              ___    ___      
+/\  _`\ /\ \            /\_ \  /\_ \     
+\ \,\L\_\ \ \___      __\//\ \ \//\ \    
+ \/_\__ \\ \  _ `\  /'__`\\ \ \  \ \ \   
+   /\ \L\ \ \ \ \ \/\  __/ \_\ \_ \_\ \_ 
+   \ `\____\ \_\ \_\ \____\/\____\/\____|
+    \/_____/\/_/\/_/\/____/\/____/\/____/
+                                         
+Exploit! Exploit! Payload! Payload! Looks vulnerable! ("hack!")   
 
 """
 help="""
@@ -124,7 +148,7 @@ exploits="""
 """
 
 # Paths
-
+normal = ".."
 exploit = "exploits"
 apks = "apks"
 elfs = "elfs"
@@ -134,6 +158,7 @@ auxiliary = "auxiliarys"
 # Animacion
 
 time.sleep(2)
+os.system("clear")
 green()
 anim()
 anim()
@@ -142,7 +167,7 @@ anim()
 
 user = os.getlogin()
 os.system("clear")
-green()
+red()
 print(banner)
 
 # Script principal
@@ -244,7 +269,7 @@ def main():
         red()
         print(banner)
         print("")
-        print("[X] Error. Please use show payloads/auxiliarys/credits! :)")
+        print("[X] Error. Please use show payloads/auxiliarys/credits/exploits! :)")
         print("")
         main()
 
@@ -306,6 +331,7 @@ def android_tcp():
     os.system("echo 'exploit' >> android_tcp.rb")
     os.system("gnome-terminal -- msfconsole -r android_tcp.rb &")
     input("Enter to return to the menu! ")
+    os.chdir( normal )
     os.system("clear")
     print(banner)
     main()
@@ -340,6 +366,7 @@ def android_http():
     os.system("echo 'exploit' >> android_http.rb")
     os.system("gnome-terminal -- msfconsole -r android_http.rb &")
     input("Enter to return to the menu! ")
+    os.chdir( normal )
     os.system("clear")
     print(banner)
     main()
@@ -374,6 +401,7 @@ def windows_tcp():
     os.system("echo 'exploit' >> windows_tcp.rb")
     os.system("gnome-terminal -- msfconsole -r windows_tcp.rb &")
     input("Enter to return to the menu! ")
+    os.chdir( normal )
     os.system("clear")
     print(banner)
     main()
@@ -409,6 +437,7 @@ def windows_http():
     os.system("echo 'exploit' >> windows_http.rb")
     os.system("gnome-terminal -- msfconsole -r windows_http.rb &")
     input("Enter to return to the menu! ")
+    os.chdir( normal )
     os.system("clear")
     print(banner)
     main()
@@ -443,6 +472,7 @@ def linux_tcp():
     os.system("echo 'run' >> linux_tcp.rb")
     os.system("gnome-terminal -- msfconsole -r linux_tcp.rb &")
     input("Enter to return to the menu! ")
+    os.chdir( normal )
     os.system("clear")
     print(banner)
     main()
@@ -470,6 +500,7 @@ def search_email():
     print("Running metasploit-framework...")
     os.system("gnome-terminal -- msfconsole -r emails.rb &")
     input("Enter to return to the menu! ")
+    os.chdir( normal )
     os.system("clear")
     print(banner)
     main()
@@ -494,6 +525,7 @@ def search_sdomains():
     print("Running metasploit-framework...")
     os.system("gnome-terminal -- msfconsole -r sdomains.rb &")
     input("Enter to return to the menu! ")
+    os.chdir( normal )
     os.system("clear")
     print(banner)
     main()
@@ -535,6 +567,7 @@ def adobe_exe():
     # lanza la terminal del listener
     os.system("gnome-terminal -- msfconsole -r adobejs_listener.rb &")
     input("Enter to return to the menu! ")
+    os.chdir( normal )
     os.system("clear")
     print(banner)
     main()
@@ -543,7 +576,7 @@ def adobe_exe():
 if __name__ == '__main__':
     try:
         os.system("clear")
-        green()
+        red()
         print(banner)
         main()
 
