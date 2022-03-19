@@ -251,11 +251,18 @@ def main():
         print("Adding tool!")
         os.system("sudo bash add.sh")
         exit()
+        
     if opcion =="show credits":
         os.system("clear")
         blue()
         print(banner2)
         print(creditos)
+        main()
+        
+    if opcion == "clear":
+        os.system("clear")
+        red()
+        print(banner)
         main()
 
     if opcion =="exit":
