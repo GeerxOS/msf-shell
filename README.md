@@ -4,7 +4,7 @@ msf-shell is a script made in python3 that uses metasploits modules to use
 
 # !!!
 
-if you want to add the tool to your terminal use bash add.sh with root permissions
+if you want to add the tool to your terminal use bash install.sh with root permissions
 
 The script wil have update so wait for more things;)!
 
