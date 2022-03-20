@@ -200,7 +200,7 @@ def main():
         os.system("clear")
         os.system("python3 scripts/tool_2/scripts/tool_2.py")
         os.system("clear")
-        print(banner2)
+        print(banner)
         main()
 
 
