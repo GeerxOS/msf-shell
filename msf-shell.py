@@ -28,7 +28,6 @@ banner="""
                                             | help             | Show available commands.    |
                                             | exit             | Finish the script.          |
                                             | update           | Update the script           |
-                                            | tool 2           | Run the other tool.         |
                                             | show credits     | Show the credits.           |
                                             | banner           | Show the banner.            |
                                             | show payloads    | Show Payloads.              |
@@ -67,7 +66,6 @@ help="""
 | help             | Show available commands.    |
 | exit             | Finish the script.          |
 | update           | Update the script           |
-| tool 2           | Run the other tool.         |
 | show credits     | Show the credits.           |
 | banner           | Show the banner.            |
 | show payloads    | Show Payloads.              |
@@ -193,14 +191,6 @@ def main():
         print(banner2)
         print(help)
         main()
-
-    if opcion == "tool 2":
-        os.system("clear")
-        os.system("python3 scripts/tool_2/scripts/tool_2.py")
-        os.system("clear")
-        print(banner)
-        main()
-
 
     if opcion =="show auxiliarys":
         os.system("clear")
