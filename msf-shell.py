@@ -32,7 +32,6 @@ banner="""
                                             | show credits     | Show the credits.           |
                                             | banner           | Show the banner.            |
                                             | show payloads    | Show Payloads.              |
-                                            | show beta        | Show beta options.          |
                                             | show auxiliarys  | Show Auxiliarys.            |
                                             | show exploits    | Show Exploits.              |
                                             | install          | Add the tool to the terminal|
@@ -72,7 +71,6 @@ help="""
 | show credits     | Show the credits.           |
 | banner           | Show the banner.            |
 | show payloads    | Show Payloads.              |
-| show beta        | Show beta options.          |
 | show auxiliarys  | Show Auxiliarys.            |
 | show exploits    | Show Exploits.              |
 | install          | Add the tool to the terminal|
