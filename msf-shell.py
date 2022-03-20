@@ -14,8 +14,6 @@ from scripts.anim import anim
 # Si solo copias y pegas dame creditos XDD
 
 banner="""
-
-
  /'\_/`\          /'___\ 
 /\      \    ____/\ \__/ 
 \ \ \__\ \  /',__\ \ ,__|
@@ -30,6 +28,7 @@ banner="""
                                             | help             | Show available commands.    |
                                             | exit             | Finish the script.          |
                                             | update           | Update the script           |
+                                            | tool 2           | Run the other tool.         |
                                             | show credits     | Show the credits.           |
                                             | banner           | Show the banner.            |
                                             | show payloads    | Show Payloads.              |
@@ -39,7 +38,7 @@ banner="""
                                             | add              | Add the tool to the terminal|
                                             +------------------------------------------------+
 
- ____    __              ___    ___      
+ ____    __              ___    ___  
 /\  _`\ /\ \            /\_ \  /\_ \     
 \ \,\L\_\ \ \___      __\//\ \ \//\ \    
  \/_\__ \\ \  _ `\  /'__`\\ \ \  \ \ \   
@@ -47,7 +46,7 @@ banner="""
    \ `\____\ \_\ \_\ \____\/\____\/\____|
     \/_____/\/_/\/_/\/____/\/____/\/____/
                                          
-Exploit! Exploit! Payload! Payload! Looks vulnerable! ("hack!")   
+Exploit! Exploit! Payload! Payload! Looks vulnerable!  
 
 """
 
@@ -69,6 +68,7 @@ help="""
 | help             | Show available commands.    |
 | exit             | Finish the script.          |
 | update           | Update the script           |
+| tool 2           | Run the other tool.         |
 | show credits     | Show the credits.           |
 | banner           | Show the banner.            |
 | show payloads    | Show Payloads.              |
@@ -180,12 +180,12 @@ user = os.getlogin()
 os.system("clear")
 red()
 print(banner)
+print("Remember there are updates! use the update command to update")
 
 # Script principal
 
 def main():
     green()
-    print("Remember there are updates! use the update command to update")
     red()
     opcion = input("root@"+user+":~# ")
 
@@ -195,6 +195,14 @@ def main():
         print(banner2)
         print(help)
         main()
+
+    if opcion == "tool 2":
+        os.system("clear")
+        os.system("python3 scripts/tool_2/scripts/tool_2.py")
+        os.system("clear")
+        print(banner2)
+        main()
+
 
     if opcion =="show auxiliarys":
         os.system("clear")
@@ -596,6 +604,7 @@ if __name__ == '__main__':
         os.system("clear")
         red()
         print(banner)
+        print("Remember there are updates! use the update command to update")
         main()
 
     except(KeyboardInterrupt):
