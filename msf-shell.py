@@ -35,7 +35,7 @@ banner="""
                                             | show beta        | Show beta options.          |
                                             | show auxiliarys  | Show Auxiliarys.            |
                                             | show exploits    | Show Exploits.              |
-                                            | add              | Add the tool to the terminal|
+                                            | install          | Add the tool to the terminal|
                                             +------------------------------------------------+
 
  ____    __              ___    ___  
@@ -75,7 +75,7 @@ help="""
 | show beta        | Show beta options.          |
 | show auxiliarys  | Show Auxiliarys.            |
 | show exploits    | Show Exploits.              |
-| add              | Add the tool to the terminal|
+| install          | Add the tool to the terminal|
 +------------------------------------------------+
 
 """
@@ -97,7 +97,7 @@ creditos="""
 
 """
 
-payloadsbeta="""
+discarded="""
 
 +----------------------------------+  +------------------------------------+  +---------------------------------------+
 |       Android Payloads           |  |          Windows Payloads          |  |        Linux Payloads                 |
@@ -218,23 +218,6 @@ def main():
         print(payloads)
         main()
 
-    if opcion =="show beta":
-        os.system("clear")
-        red()
-        print(banner2)
-        time.sleep(0.4)
-        print("These options are in beta, then they will be added to the tool!")
-        time.sleep(0.4)
-        print("These options are in beta, then they will be added to the tool!")
-        time.sleep(0.4)
-        print(payloadsbeta)
-        print("These options are in beta, then they will be added to the tool!")
-        time.sleep(0.4)
-        print("These options are in beta, then they will be added to the tool!")
-        time.sleep(0.4)
-        main()
-        
-
     if opcion=="show exploits":
         os.system("clear")
         blue()
@@ -255,9 +238,9 @@ def main():
         os.system("rm -rf __pycache__")
         exit()
 
-    if opcion == "add":
+    if opcion == "install":
         print("Adding tool!")
-        os.system("sudo bash add.sh")
+        os.system("sudo bash install.sh")
         exit()
         
     if opcion =="show credits":
