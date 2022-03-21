@@ -294,6 +294,11 @@ def main():
     if opcion=="use exploit/windows/fileformat/adobe_pdf_embedded_exe_nojs":
         adobe_exe()
 
+    else:
+        red()
+        print("[Msf-Shell] Is Not A Command ")
+        main()
+
 def android_tcp():
     os.chdir( apks )
     os.system("clear")
