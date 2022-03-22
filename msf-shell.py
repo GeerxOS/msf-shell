@@ -221,7 +221,7 @@ def main():
 
     if opcion == "update":
         print("Updating...")
-        os.system("git pull")
+        os.system("sudo git pull")
         print("All updated!")
         os.system("rm -rf __pycache__")
         exit()
