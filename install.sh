@@ -5,6 +5,8 @@ git clone https://github.com/GeerxOS/msf-shell
 cd msf-shell
 mkdir /usr/share/msf-shell
 mv * /usr/share/msf-shell
+mv .gitignore /usr/share/msf-shell
+mv .git /usr/share/msf-shell
 cd /usr/bin
 echo '#!/bin/bash' >> msf-shell
 echo ' ' >> msf-shell
