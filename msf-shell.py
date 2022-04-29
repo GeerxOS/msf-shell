@@ -1,4 +1,5 @@
-# Python code obfuscated by www.development-tools.net 
+#Tool created by GeerxOS
+#Obfuscated
  
 
 import base64, codecs
